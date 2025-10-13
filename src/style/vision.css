@@ -1,0 +1,112 @@
+:root{
+  --azul-escuro:#003554;
+  --cobre:#c16036;
+  --branco:#ffffff;
+}
+
+.mvv{
+  background: var(--azul-escuro);
+  padding: 80px 10%;
+}
+
+.mvv-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.mvv-card{
+  background: transparent;
+  color: var(--branco);
+}
+
+.mvv-media{
+  margin: 0 0 18px 0;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 4px solid rgba(255,255,255,.08);
+}
+
+.mvv-media img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.95) contrast(1.05);
+}
+
+.mvv-card h3{
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  margin: 8px 0 16px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.mvv-card h3::after{
+  content:"";
+  display:block;
+  width: 56px;
+  height: 3px;
+  background: var(--cobre);
+  border-radius: 3px;
+  margin: 10px auto 0;
+}
+
+.mvv-card ul{
+  list-style: none;
+  padding: 0 8px;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  line-height: 1.7;
+  font-size: 1.06rem;
+}
+
+/* marcadores personalizados (•) na cor cobre */
+.mvv-card ul li{
+  position: relative;
+  padding-left: 18px;
+}
+.mvv-card ul li::before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--branco);
+  opacity: .9;
+}
+
+/* ====== RESPONSIVO ====== */
+/* <= 760px: 2 colunas */
+@media (max-width: 760px){
+  .mvv{
+    padding: 64px 8%;
+  }
+  .mvv-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .mvv-media img{ height: 200px; }
+  .mvv-card h3{ font-size: 1.45rem; }
+  .mvv-card ul{ font-size: 1rem; }
+}
+
+/* <= 320px: 1 coluna */
+@media (max-width: 320px){
+  .mvv{
+    padding: 56px 6%;
+  }
+  .mvv-grid{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .mvv-media img{ height: 180px; }
+  .mvv-card h3{ font-size: 1.3rem; }
+  .mvv-card ul{
+    font-size: .96rem;
+    line-height: 1.6;
+  }
+}

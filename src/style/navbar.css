@@ -1,0 +1,14 @@
+
+.image-navbar {
+    width: 223px;
+}
+
+.nav-color {
+    background-color: var(--azul-escuro);
+
+}
+
+.nav-link {
+    color: var(--branco);
+
+}

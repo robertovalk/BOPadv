@@ -1,0 +1,88 @@
+.contact{
+  background: var(--azul-escuro);
+  padding: 72px 10%;
+}
+
+.contact-wrap{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.contact h2{
+  color: var(--branco);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.contact-label{
+  color: #d9e6ef;
+  font-size: .95rem;
+}
+
+.contact-input{
+  width: 100%;
+  margin: 8px 0 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+  color: var(--branco);
+  outline: none;
+}
+
+.contact-btn{
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--branco);
+  color: #0e3550;
+  padding: 14px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .4px;
+  margin: 14px 0;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+.contact-btn:hover{ transform: translateY(-1px); }
+.contact-btn:active{ transform: translateY(0); opacity:.95; }
+
+.contact-btn.wpp{
+  background: var(--branco);
+}
+
+.contact-btn.email{
+  background: rgba(255,255,255,.92);
+}
+
+.contact-social{
+  margin-top: 22px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ig-btn{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+/* Responsivo */
+@media (max-width: 760px){
+  .contact{ padding: 64px 8%; }
+  .contact h2{ font-size: 1.7rem; }
+}
+
+@media (max-width: 320px){
+  .contact{ padding: 56px 6%; }
+  .contact h2{ font-size: 1.5rem; }
+  .ig-btn{ width: 100%; text-align: center; }
+}
