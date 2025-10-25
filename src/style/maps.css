@@ -1,14 +1,14 @@
-/* ===== Localização ===== */
+/* ====== BASE (320px+) ====== */
 .location{
   background: #f6f8fa;
-  padding: 90px 10%;
+  padding: 60px 6%;
 }
 
 .location-wrap{
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* mapa maior que o texto */
+  grid-template-columns: 1fr;       /* empilhado no mobile */
+  gap: 24px;
   align-items: start;
-  gap: 40px;
 }
 
 .location-map{
@@ -16,28 +16,28 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  border: 4px solid rgba(0,0,0,.03);
+  border: 3px solid rgba(0,0,0,.03);
 }
 
 .location-map iframe{
   display: block;
   width: 100%;
-  height: 480px;            /* altura confortável no desktop */
+  height: 280px;                    /* altura mobile */
   border: 0;
 }
 
 .location-info h2{
   color: var(--azul-escuro);
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  margin: 6px 0 14px;
+  margin: 4px 0 12px;
 }
 
 .location-info p{
   color: #0e3550;
-  font-size: 1.25rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
 .location-info strong{
@@ -47,11 +47,11 @@
 .location-list{
   list-style: none;
   padding: 0;
-  margin: 10px 0 24px;
+  margin: 10px 0 20px;
   display: grid;
   gap: 8px;
   color: #2d3238;
-  font-size: 1.05rem;
+  font-size: 0.98rem;
 }
 .location-list li span{
   color: var(--azul-escuro);
@@ -69,28 +69,58 @@
   text-decoration: none;
   transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
   box-shadow: 0 8px 18px rgba(193,96,54,.28);
+  width: 100%;
+  text-align: center;
 }
 .btn-route:hover{ transform: translateY(-1px); box-shadow: 0 10px 22px rgba(193,96,54,.34); }
 .btn-route:active{ transform: translateY(0); opacity:.95; }
 
-/* ===== Responsivo ===== */
-/* <= 760px: empilha e ajusta alturas */
-@media (max-width: 760px){
-  .location{ padding: 72px 8%; }
-  .location-wrap{
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .location-map iframe{ height: 360px; }
-  .location-info h2{ font-size: 1.9rem; }
-  .location-info p{ font-size: 1.12rem; }
+/* ====== 375px ====== */
+@media (min-width: 375px){
+  .location{ padding: 64px 7%; }
+  .location-map iframe{ height: 300px; }
+  .location-info h2{ font-size: 1.75rem; }
+  .location-info p{ font-size: 1.05rem; }
 }
 
-/* <= 320px: otimização mobile pequeno */
-@media (max-width: 320px){
-  .location{ padding: 60px 6%; }
-  .location-map iframe{ height: 280px; }
-  .location-info h2{ font-size: 1.6rem; }
-  .location-info p{ font-size: 1.02rem; line-height: 1.6; }
-  .btn-route{ width: 100%; text-align: center; }
+/* ====== 425px ====== */
+@media (min-width: 425px){
+  .location{ padding: 72px 8%; }
+  .location-map iframe{ height: 340px; }
+  .location-info h2{ font-size: 1.9rem; }
+  .location-info p{ font-size: 1.12rem; line-height: 1.7; }
+  .btn-route{ width: auto; text-align: left; }
+}
+
+/* ====== 768px (tablets) ====== */
+@media (min-width: 768px){
+  .location{ padding: 80px 8%; }
+  .location-wrap{
+    grid-template-columns: 1fr;    /* ainda empilhado, mas com mais espaçamento */
+    gap: 32px;
+  }
+  .location-map iframe{ height: 380px; }
+  .location-info h2{ font-size: 2rem; }
+  .location-info p{ font-size: 1.15rem; line-height: 1.75; }
+  .location-list{ font-size: 1.02rem; }
+}
+
+/* ====== 1024px (desktops) ====== */
+@media (min-width: 1024px){
+  .location{ padding: 90px 10%; }
+  .location-wrap{
+    grid-template-columns: 1.2fr 1fr; /* mapa maior que o texto */
+    gap: 40px;
+  }
+  .location-map iframe{ height: 480px; }
+  .location-info h2{ font-size: 2.2rem; }
+  .location-info p{ font-size: 1.25rem; }
+  .btn-route{ padding: 12px 20px; }
+}
+
+/* ====== 1280px+ (opcional) ====== */
+@media (min-width: 1280px){
+  .location{ padding: 100px 12%; }
+  .location-map iframe{ height: 520px; }
+  .location-info h2{ font-size: 2.4rem; }
 }

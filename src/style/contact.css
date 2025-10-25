@@ -1,6 +1,7 @@
+/* ====== BASE (320px+) ====== */
 .contact{
   background: var(--azul-escuro);
-  padding: 72px 10%;
+  padding: 56px 6%;
 }
 
 .contact-wrap{
@@ -10,14 +11,15 @@
 
 .contact h2{
   color: var(--branco);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  text-align: left;
 }
 
 .contact-label{
   color: #d9e6ef;
-  font-size: .95rem;
+  font-size: .9rem;
 }
 
 .contact-input{
@@ -60,8 +62,9 @@
 .contact-social{
   margin-top: 22px;
   display: flex;
-  gap: 16px;
-  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .ig-btn{
@@ -72,17 +75,44 @@
   color: var(--branco);
   text-decoration: none;
   font-weight: 700;
+  text-align: center;
   box-shadow: 0 8px 18px rgba(0,0,0,.15);
 }
 
-/* Responsivo */
-@media (max-width: 760px){
-  .contact{ padding: 64px 8%; }
-  .contact h2{ font-size: 1.7rem; }
+/* ====== 375px ====== */
+@media (min-width: 375px){
+  .contact{ padding: 60px 7%; }
+  .contact h2{ font-size: 1.6rem; }
 }
 
-@media (max-width: 320px){
-  .contact{ padding: 56px 6%; }
-  .contact h2{ font-size: 1.5rem; }
-  .ig-btn{ width: 100%; text-align: center; }
+/* ====== 425px ====== */
+@media (min-width: 425px){
+  .contact{ padding: 64px 8%; }
+  .contact h2{ font-size: 1.7rem; }
+  .contact-social{ flex-direction: row; align-items: center; justify-content: flex-start; gap: 16px; }
+  .ig-btn{ width: auto; }
+}
+
+/* ====== 768px (tablets) ====== */
+@media (min-width: 768px){
+  .contact{ padding: 72px 8%; }
+  .contact h2{ font-size: 1.85rem; }
+  .contact-label{ font-size: .95rem; }
+  .contact-input{ padding: 14px 16px; font-size: 1rem; }
+  .contact-btn{ width: 280px; margin: 18px 0; }
+  .contact-social{ margin-top: 28px; }
+}
+
+/* ====== 1024px (desktops) ====== */
+@media (min-width: 1024px){
+  .contact{ padding: 72px 10%; }
+  .contact h2{ font-size: 2rem; margin-bottom: 18px; }
+  .contact-btn{ width: 300px; }
+  .contact-social{ margin-top: 32px; }
+}
+
+/* ====== 1280px+ (opcional) ====== */
+@media (min-width: 1280px){
+  .contact{ padding: 80px 12%; }
+  .contact h2{ font-size: 2.1rem; }
 }

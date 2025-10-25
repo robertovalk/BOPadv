@@ -1,90 +1,98 @@
-.hero {
+/* ====== BASE (320px+) ====== */
+.hero{
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 100vh;
-  padding: 0 10%;
-  background-image: linear-gradient(
-      rgba(0, 53, 84, 0.9),
-      rgba(0, 53, 84, 0.9)
-    ),
-    url(../img/bgbop2.jpg);
+  justify-content: center;             /* mobile centralizado */
+  min-height: 85dvh;                   /* melhor que 100vh em mobile */
+  padding: 0 6%;
+  background-image:
+    linear-gradient(rgba(0,53,84,.9), rgba(0,53,84,.9)),
+    url(../img/bg-bop\ -\ Copia.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: 95%; /* força o foco visual para a direita */
-  background-position-y: center;
-}
-  
-
-
-.hero-content {
-    max-width: 650px;
-  }
-
-.hero h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    color: var(--branco);
-  }
-
-.hero h1 span {
-    color: var(--cobre);
-  }
-
-  .hero p {
-    margin-top: 20px;
-    font-size: 1.15rem;
-    color: var(--branco);
-    opacity: 0.9;
-  }
-
-  .cta {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 14px 32px;
-    background-color: var(--cobre);
-    color: var(--branco);
-    font-weight: 600;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: 0.3s ease;
-  }
-
-  .cta:hover {
-    background-color: #a14d2c;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      justify-content: center;
-      text-align: center;
-      padding: 0 6%;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-    }
-
-    .hero p {
-      font-size: 1rem;
-    }
+  background-position: 50% center;     /* centraliza no mobile */
 }
 
-/* Telas médias (<= 760px) */
-@media (max-width: 760px) {
-  .hero {
+.hero-content{
+  max-width: 650px;
+}
+
+.hero h1{
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--branco);
+}
+
+.hero h1 span{ color: var(--cobre); }
+
+.hero p{
+  margin-top: 16px;
+  font-size: 0.98rem;
+  color: var(--branco);
+  opacity: .9;
+}
+
+.cta{
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 28px;
+  background-color: var(--cobre);
+  color: var(--branco);
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform .3s ease, background-color .3s ease;
+}
+.cta:hover{
+  background-color: #a14d2c;
+  transform: translateY(-2px);
+}
+
+/* ====== 375px ====== */
+@media (min-width: 375px){
+  .hero{ padding: 0 7%; min-height: 86dvh; }
+  .hero h1{ font-size: 2.1rem; }
+  .hero p{ font-size: 1rem; }
+  .cta{ margin-top: 32px; padding: 12px 30px; }
+}
+
+/* ====== 425px (smartphones grandes) ====== */
+@media (min-width: 425px){
+  .hero{ padding: 0 8%; min-height: 90dvh; background-position: 70% center; }
+  .hero h1{ font-size: 2.3rem; }
+  .hero p{ font-size: 1.06rem; }
+  .cta{ margin-top: 34px; padding: 13px 32px; }
+}
+
+/* ====== 768px (tablets) ====== */
+@media (min-width: 768px){
+  .hero{
+    justify-content: flex-start;       /* volta a alinhar à esquerda */
+    text-align: left;
     padding: 0 8%;
-    background-position: 70% center; /* puxa um pouco para o centro */
-    height: 90vh;
+    background-position: 70% center;   /* puxa o foco um pouco à direita */
+    min-height: 90dvh;
   }
+  .hero h1{ font-size: 2.6rem; }
+  .hero p{ font-size: 1.12rem; margin-top: 18px; }
+  .cta{ margin-top: 36px; }
 }
 
-/* Telas pequenas (<= 320px) */
-@media (max-width: 320px) {
-  .hero {
-    padding: 0 6%;
-    background-position: 50% center; /* centraliza no mobile pequeno */
-    height: 85vh;
+/* ====== 1024px (desktops) ====== */
+@media (min-width: 1024px){
+  .hero{
+    padding: 0 10%;
+    background-position-x: 95%;        /* foco visual bem à direita */
+    background-position-y: center;
+    min-height: 100dvh;                /* experiência fullscreen */
   }
+  .hero h1{ font-size: 3rem; }
+  .hero p{ font-size: 1.15rem; }
+  .cta{ margin-top: 40px; }
+}
+
+/* ====== 1280px+ (opcional) ====== */
+@media (min-width: 1280px){
+  .hero-content{ max-width: 720px; }
+  .hero h1{ font-size: 3.2rem; }
 }

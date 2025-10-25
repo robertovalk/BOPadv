@@ -4,15 +4,16 @@
   --branco:#ffffff;
 }
 
+/* ====== BASE (320px+) ====== */
 .mvv{
   background: var(--azul-escuro);
-  padding: 80px 10%;
+  padding: 56px 6%;
 }
 
 .mvv-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: 1fr; /* 1 coluna no mobile */
+  gap: 24px;
 }
 
 .mvv-card{
@@ -21,7 +22,7 @@
 }
 
 .mvv-media{
-  margin: 0 0 18px 0;
+  margin: 0 0 16px 0;
   overflow: hidden;
   border-radius: 6px;
   border: 4px solid rgba(255,255,255,.08);
@@ -29,7 +30,7 @@
 
 .mvv-media img{
   width: 100%;
-  height: 220px;
+  height: 180px;
   object-fit: cover;
   display: block;
   filter: saturate(.95) contrast(1.05);
@@ -37,10 +38,10 @@
 
 .mvv-card h3{
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: .5px;
-  margin: 8px 0 16px;
+  margin: 8px 0 12px;
   text-transform: uppercase;
   position: relative;
 }
@@ -60,9 +61,9 @@
   padding: 0 8px;
   margin: 0;
   display: grid;
-  gap: 12px;
-  line-height: 1.7;
-  font-size: 1.06rem;
+  gap: 10px;
+  line-height: 1.6;
+  font-size: .96rem;
 }
 
 /* marcadores personalizados (•) na cor cobre */
@@ -75,18 +76,27 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--branco);
-  opacity: .9;
+  color: var(--cobre); /* corrigido para cobre */
+  opacity: .95;
 }
 
-/* ====== RESPONSIVO ====== */
-/* <= 760px: 2 colunas */
-@media (max-width: 760px){
+/* ====== 375px ====== */
+@media (min-width: 375px){
+  .mvv{
+    padding: 56px 7%;
+  }
+  .mvv-media img{ height: 190px; }
+  .mvv-card h3{ font-size: 1.35rem; }
+  .mvv-card ul{ font-size: .98rem; }
+}
+
+/* ====== 425px (smartphones grandes) ====== */
+@media (min-width: 425px){
   .mvv{
     padding: 64px 8%;
   }
   .mvv-grid{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 28px;
   }
   .mvv-media img{ height: 200px; }
@@ -94,19 +104,44 @@
   .mvv-card ul{ font-size: 1rem; }
 }
 
-/* <= 320px: 1 coluna */
-@media (max-width: 320px){
+/* ====== 768px (tablets) ====== */
+@media (min-width: 768px){
   .mvv{
-    padding: 56px 6%;
+    padding: 80px 8%;
   }
   .mvv-grid{
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr); /* mantém 2 colunas p/ leitura confortável */
+    gap: 32px;
   }
-  .mvv-media img{ height: 180px; }
-  .mvv-card h3{ font-size: 1.3rem; }
+  .mvv-media img{ height: 220px; }
+  .mvv-card h3{ font-size: 1.6rem; }
   .mvv-card ul{
-    font-size: .96rem;
-    line-height: 1.6;
+    font-size: 1.06rem;
+    line-height: 1.7;
+    gap: 12px;
   }
+}
+
+/* ====== 1024px (desktops) ====== */
+@media (min-width: 1024px){
+  .mvv{
+    padding: 80px 10%;
+  }
+  .mvv-grid{
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .mvv-media img{ height: 220px; }
+  .mvv-card h3{ font-size: 1.6rem; }
+}
+
+/* ====== 1280px+ (opcional: telas muito largas) ====== */
+@media (min-width: 1280px){
+  .mvv-grid{
+    max-width: 1280px;
+    gap: 44px;
+  }
+  .mvv-card h3{ font-size: 1.7rem; }
 }
